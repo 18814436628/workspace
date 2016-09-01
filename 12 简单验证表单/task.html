@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css"></style>
+   <script>
+    window.onload =function(){
+        /*鼠标点击删除预输入 start*/
+        var txt = document.getElementById("txt");
+        txt.onfocus = function(){
+            if(txt.value == "请输入..."  )
+            {
+                txt.value = "";
+                txt.style.color = "#333";
+            }
+        };
+        txt.onblur = function(){
+            if(txt.value == "")
+            {
+                txt.value = "请输入...";
+                txt.style.color = "#ccc";
+            }
+        };
+        /*鼠标点击删除预输入 end*/
+
+        /*函数写法 start*/
+        function $(id) {return document.getElementById(id);}
+        $("btn").onclick = function(){
+            var b =100;
+            if ($("txt").value >= 5){
+                b+=b*0.2
+            }else if ($("txt").value>=2 && $("txt").value <=4){
+                b+=b*0.15;
+            }else if ($("txt").value<2 && $("txt").value != 0){
+                b+=b*0.1
+            }
+            alert(b);
+        };
+        /*函数写法 end*/
+    }
+</script>
+</head>
+<body>
+<input type="text" id="txt" value="请输入..."><button id="btn">查询</button>
+</body>
+</html>

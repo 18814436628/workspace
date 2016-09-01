@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css"></style>
+    <script>
+        window.onload = function(){
+        var txt =document.getElementById("txt");
+            txt.focus();
+            txt.onmouseover=function(){
+                this.select()
+            };
+        var sele = document.getElementById("select");
+            sele.onmouseover=function(){
+                this.select();
+            }
+        };
+    </script>
+</head>
+<body>
+自动获取焦点
+<input type="text" id="txt"/>
+鼠标经过选择表单：
+<input type="text" id="select"/>
+<select>
+    <option value="ss">00</option>
+    <option value="ss">11</option>
+    <option value="ss">22</option>
+    <option value="ss">33</option>
+</select>
+</body>
+</html>
